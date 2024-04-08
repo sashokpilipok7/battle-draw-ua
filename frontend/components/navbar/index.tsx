@@ -11,6 +11,8 @@ import {
   useColorMode,
 } from "@chakra-ui/core";
 
+import Logo from "components/logo";
+
 const Navbar: NextComponentType = () => {
   const { data:session, status } = useSession();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -24,11 +26,11 @@ const Navbar: NextComponentType = () => {
   };
 
   const linksForAllUsers = [
-    {
-      id: "home",
-      label: "Home",
-      href: "/",
-    },
+    // {
+    //   id: "home",
+    //   label: "Home",
+    //   href: "/",
+    // },
   ];
 
   const linksForAuthenticatedUsers = [
@@ -58,7 +60,7 @@ const Navbar: NextComponentType = () => {
               signIn();
             }}
           >
-            Sign In
+            Увійти
           </Button>
         </Link>
       </Box>
@@ -108,6 +110,9 @@ const Navbar: NextComponentType = () => {
             justifyContent="space-between"
             w="full"
           >
+            <Box>
+              <Logo />
+            </Box>
             <Box>
               <Stack isInline spacing={4} align="center" fontWeight="semibold">
                 {linksForAllUsers.map((link) => {

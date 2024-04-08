@@ -60,16 +60,9 @@ const IndexPageComponent = () => {
     );
   };
 
-  return (
-    <Stack>
-      <Flex
-        minH={`calc(100vh - ${heightOfNavbar} - ${containerPadding}*2)`}
-        justifyContent="center"
-        alignItems="center"
-        color={color[colorMode]}
-      >
-        <Stack spacing={4} maxW="xl" mx="auto">
-          <Heading textAlign="center">Nextjs Strapi Boilerplate</Heading>
+  let body = (
+<>
+<Heading textAlign="center">Nextjs Strapi Boilerplate</Heading>
           <Text fontSize="xl" lineHeight="tall" textAlign="center">
             Boilerplate for building applications using Strapi and Next.js. This
             demo application has been built using Chakra UI, NextAuth.js and
@@ -80,7 +73,33 @@ const IndexPageComponent = () => {
               {signInButtonNode()}
               {signOutButtonNode()}
             </Stack>
+          </Box></>
+  )
+
+  if(true){
+    body = (
+      <>
+       <Heading color="#ffcd00" textAlign="center">Онлайн жеребкування спортсменів</Heading>
+          <Text fontSize="xl" lineHeight="tall" textAlign="center">
+            Тут ви можете пришвидшити організацію змагань в один клік
+          </Text>
+          <Box>
+           
           </Box>
+        </>
+    )
+  }
+
+  return (
+    <Stack>
+      <Flex
+        minH={`calc(100vh - ${heightOfNavbar} - ${containerPadding}*2)`}
+        justifyContent="center"
+        alignItems="center"
+        color={color[colorMode]}
+      >
+        <Stack spacing={4} maxW="xl" mx="auto">
+         {body}
         </Stack>
       </Flex>
     </Stack>
